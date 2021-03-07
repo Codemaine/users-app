@@ -3,7 +3,6 @@ import {Form, Button } from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {loginUser} from '../actions/authActions';
 import {Redirect} from 'react-router-dom';
-import {store} from "../store/store"
 import { NavLink } from 'react-router-dom'
 
 
@@ -55,14 +54,14 @@ handleSubmit = (e) => {
                 <br />
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" required type="email" placeholder="john.doe@gmail.com" name="email"
-                            value={this.state.email} onChange={this.handleChange} />
+                        <Form.Label>Email</Form.Label>on
+                        <Form.Control type="email" required placeholder="john.doe@gmail.com" name="email"
+                            value={this.state.email} onChange={(e) => this.handleChange(e)} />
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>password</Form.Label>
                         <Form.Control required type="password" placeholder="........" name="password"
-                            value={this.state.password} onChange={this.handleChange} />
+                            value={this.state.password} onChange={(e) => this.handleChange(e)} />
                     </Form.Group>
                     <p className="text-danger"></p>
                     <Button variant="primary" type="Login">
