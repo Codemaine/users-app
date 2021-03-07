@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 const Toast = Swal.mixin({
@@ -39,12 +38,13 @@ export const loginUser = (details) => {
         .login(details)
         .then(() => {
             console.log("User created successfully");
-            useHistory().push('/')
         })
-        .catch((err) =>  Toast.fire({
+        .catch((err) =>  { 
+            Toast.fire({
             icon: 'error',
             title: err.message
-          }));
+          })
+        });
         };
 };
 export const logout = () => {
